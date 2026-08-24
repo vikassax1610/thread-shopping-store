@@ -1,0 +1,152 @@
+export type Product = {
+  id: number;
+  name: string;
+  category: string;
+  gender: string;
+  price: number;
+  originalPrice: number;
+  description: string;
+  images: string[];
+  colors: string[];
+  sizes: string[];
+  rating: number;
+  reviewCount: number;
+  isNew?: boolean;
+  isBestSeller?: boolean;
+  stock: number;
+};
+
+export const images = [
+  'https://images.pexels.com/photos/26936524/pexels-photo-26936524.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/16532060/pexels-photo-16532060.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/15759604/pexels-photo-15759604.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/19402530/pexels-photo-19402530.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/30106351/pexels-photo-30106351.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/27408340/pexels-photo-27408340.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/16983058/pexels-photo-16983058.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/8217376/pexels-photo-8217376.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/34976481/pexels-photo-34976481.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  'https://images.pexels.com/photos/19869754/pexels-photo-19869754.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+];
+
+const productNames = [
+  'Essential Oversized Tee',
+  'Moss Utility Jacket',
+  'Relaxed Cargo Trousers',
+  'Everyday Denim Jacket',
+  'Soft Ribbed Dress',
+  'Studio Zip Hoodie',
+  'Classic Oxford Shirt',
+  'Linen Blend Trousers',
+  'Daily Crossbody Bag',
+  'Minimal Field Watch',
+  'Canvas Weekend Tote',
+  'Frame Sunglasses',
+  'Heavyweight Sweatshirt',
+  'Tailored Wide Leg Pants',
+  'Signature Knit Polo',
+  'Utility Overshirt',
+  'Relaxed Straight Jeans',
+  'Satin Slip Dress',
+  'Organic Cotton Cap',
+  'Ribbed Tank Top',
+  'Leather Belt Bag',
+  'Essential Crewneck',
+  'Linen Resort Shirt',
+  'Pleated Midi Skirt',
+  'Classic Chronograph',
+  'Cropped Bomber Jacket',
+  'Boxy Graphic Tee',
+  'Suede Driving Loafers',
+  'Gold Link Bracelet',
+  'Everyday Chino',
+];
+
+const categories = [
+  'T-Shirts',
+  'Jackets',
+  'Trousers',
+  'Jackets',
+  'Dresses',
+  'Hoodies',
+  'Shirts',
+  'Trousers',
+  'Bags',
+  'Watches',
+  'Bags',
+  'Sunglasses',
+  'Hoodies',
+  'Trousers',
+  'Shirts',
+  'Jackets',
+  'Jeans',
+  'Dresses',
+  'Caps',
+  'Tops',
+  'Bags',
+  'Hoodies',
+  'Shirts',
+  'Skirts',
+  'Watches',
+  'Jackets',
+  'T-Shirts',
+  'Accessories',
+  'Jewelry',
+  'Trousers',
+];
+
+export const products: Product[] = productNames.map((name, i) => ({
+  id: i + 1,
+  name,
+  category: categories[i],
+  gender: i % 3 === 0 ? 'Women' : i % 3 === 1 ? 'Men' : 'Unisex',
+  price: 799 + ((i * 137) % 1800),
+  originalPrice: 1199 + ((i * 191) % 2400),
+  description:
+    'Thoughtfully designed for everyday movement, this piece brings an elevated ease to your wardrobe. Cut from comfortable, considered fabric with a clean finish.',
+  images: [images[i % images.length], images[((i + 3) % images.length)]],
+  colors: ['Olive', 'Black', 'Sand'],
+  sizes: ['XS', 'S', 'M', 'L', 'XL'],
+  rating: 4.2 + ((i % 8) / 10),
+  reviewCount: 24 + i * 7,
+  isNew: i < 8,
+  isBestSeller: i % 4 === 0,
+  stock: 12 + i,
+}));
+
+export const categories_list = ['T-Shirts', 'Jackets', 'Trousers', 'Dresses', 'Hoodies', 'Shirts', 'Bags', 'Watches', 'Sunglasses', 'Caps', 'Tops', 'Jeans', 'Skirts', 'Accessories', 'Jewelry'];
+
+export const articles = [
+  'How to build a wardrobe that works harder',
+  'The case for dressing slower',
+  'Five ways to wear one great shirt',
+  'Inside the Threads studio',
+  'Colour, texture and the new season',
+  'A guide to buying better basics',
+];
+
+export const faqs = [
+  'How do I track my order?',
+  'What is your return policy?',
+  'How long does delivery take?',
+  'Do you ship internationally?',
+  'Can I change my delivery address?',
+  'How do I find my size?',
+  'What payment methods do you accept?',
+  'Can I cancel my order?',
+  'Are your products sustainable?',
+  'How do I care for my Threads pieces?',
+  'What if my order arrives damaged?',
+  'How can I contact support?',
+  'Do you offer gift wrapping?',
+  'Where are Threads pieces made?',
+  'Can I use more than one coupon?',
+];
+
+export const jobs = [
+  'Frontend Developer',
+  'UI/UX Designer',
+  'Fashion Designer',
+  'Marketing Manager',
+  'Customer Support Executive',
+];
