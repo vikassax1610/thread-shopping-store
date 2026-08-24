@@ -7,7 +7,7 @@ import { WishlistProvider } from './context/WishlistContext';
 import { CheckoutProvider } from './context/CheckoutContext';
 import { ToastProvider } from './context/ToastContext';
 import { AppRoutes } from './routes/AppRoutes';
-import AiAssistant from "./ai-assistant-compnents/ai-assistant/AiAssistant";
+import AIAssistant from "./ai-assistant-compnents/ai-assistant/AIAssistant";
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +20,7 @@ function App() {
                   <AppRoutes />
                 </MainLayout>
                 <ToastDisplay />
-                <AiAssistant />
+                <AIAssistant />
               </ToastProvider>
             </CheckoutProvider>
           </WishlistProvider>
