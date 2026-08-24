@@ -2,7 +2,7 @@ import { Bot, User } from "lucide-react";
 import MarkdownRenderer from "../markdown/MarkdownRenderer";
 import ProductList from "../products/ProductList";
 
-function MessageBubble({ message }) {
+function MessageBubble({ message, onClose }) {
   const isUser = message.role === "user";
 
   return (
@@ -44,7 +44,8 @@ function MessageBubble({ message }) {
           ) : (
             <div className="flex flex-col gap-3">
               <MarkdownRenderer message={message.content} />
-              <ProductList products={message.products} />
+              <ProductList products={message.products} onClose={onClose}
+              />
             </div>
           )}
         </div>

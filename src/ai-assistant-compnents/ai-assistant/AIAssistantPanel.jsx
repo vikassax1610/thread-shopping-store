@@ -48,7 +48,7 @@ function AIAssistantPanel({ onClose }) {
 
         {/* Chat */}
         <div className="flex-1 min-h-0">
-          <ChatContainer />
+          <ChatContainer onClose={onClose} />
         </div>
       </aside>
     </>

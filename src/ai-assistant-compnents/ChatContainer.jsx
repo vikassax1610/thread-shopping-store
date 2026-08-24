@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../api/aiApi.js";
 import ChatsWindow from "./chats/ChatWindow";
 import ChatInput from "./chats/ChatInput";
-function ChatContainer() {
+function ChatContainer({ onClose }) {
   const [userMessage, setUserMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +44,8 @@ function ChatContainer() {
     <div className="w-full h-full flex flex-col">
 
       {/* Chat Area */}
-      <ChatsWindow messages={messages} isLoading={isLoading} setUserMessage={setUserMessage} />
+      <ChatsWindow messages={messages} isLoading={isLoading} setUserMessage={setUserMessage} onClose={onClose}
+      />
 
       {/* Input Area */}
       <ChatInput userMessage={userMessage}

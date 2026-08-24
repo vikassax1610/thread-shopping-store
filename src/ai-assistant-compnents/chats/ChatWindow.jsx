@@ -1,12 +1,12 @@
 import MessageBubble from "./MessageBubble";
 import SuggestionMessages from "./SuggestionMessages";
-function ChatWindow({ messages, isLoading, setUserMessage }) {
- const suggestions = [
-  "I need something stylish for women under ₹2000",
-  "Show me black clothing",
-  "What's popular right now?",
-  "Find highly rated products under ₹1500",
-];
+function ChatWindow({ messages, isLoading, setUserMessage, onClose }) {
+  const suggestions = [
+    "I need something stylish for women under ₹2000",
+    "Show me black clothing",
+    "What's popular right now?",
+    "Find highly rated products under ₹1500",
+  ];
   const handleSuggestion = (suggestion) => {
     setUserMessage(suggestion);
   };
@@ -30,6 +30,8 @@ function ChatWindow({ messages, isLoading, setUserMessage }) {
             <MessageBubble
               key={message.id}
               message={message}
+              onClose={onClose}
+
             />
           ))
         )}

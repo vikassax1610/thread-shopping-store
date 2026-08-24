@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-function ProductList({ products }) {
+function ProductList({ products, onClose }) {
   if (!products?.length) {
     return null;
   }
@@ -11,6 +11,8 @@ function ProductList({ products }) {
         <ProductCard
           key={product.id}
           product={product}
+          onClose={onClose}
+
         />
       ))}
     </div>
