@@ -20,6 +20,7 @@ export function Hero() {
           <Link className="text-link" to="/new-arrivals">
             Explore new arrivals <ArrowRight size={15} />
           </Link>
+          
         </div>
       </div>
       <div className="hero-image">
